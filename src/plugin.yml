@@ -1,0 +1,8 @@
+name: DurchfastenCitybuild
+author: Chaosmann09
+version: 1.0
+main: de.durchfasten.main.Main
+
+commands:
+  kopf:
+  spawn:
