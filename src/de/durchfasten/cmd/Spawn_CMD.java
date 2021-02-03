@@ -7,6 +7,7 @@ import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.World;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -14,7 +15,7 @@ import org.bukkit.event.Listener;
 
 import de.durchfasten.utils.Manager;
 
-public class Spawn_CMD implements Listener{
+public class Spawn_CMD implements CommandExecutor{
 	
 	
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
