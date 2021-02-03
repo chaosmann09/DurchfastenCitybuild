@@ -4,8 +4,6 @@ version: 1.0
 main: de.durchfasten.main.Main
 
 commands:
-  rank:
-    description: Gebe spielern einen rank.
   kopf:
     description: habe einen kopf
   delhome:
