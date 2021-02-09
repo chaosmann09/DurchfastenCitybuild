@@ -1,0 +1,19 @@
+name: DurchfastenCiytbuild
+author: Chaosmann09
+version: 1.0
+main: de.durchfasten.main.Main
+
+commands:
+  kopf:
+    description: habe einen kopf
+  delhome:
+  home:
+  sethome:
+  spawn:
+    description: teleportiere dich zum spawn
+  setspawn:
+  wb:
+  craft:
+  night:
+  day:
+  warp:
