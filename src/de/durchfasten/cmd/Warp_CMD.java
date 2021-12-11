@@ -15,28 +15,31 @@ public class Warp_CMD implements CommandExecutor{
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         Player p = (Player) sender;
 
-        if (args.length == 0) {
-            p.sendMessage(Manager.PREFIX + "§c/warp <name>");
+        if (args.length < 1 || args.length > 2) {
+            p.sendMessage(Manager.PREFIX + "Â§c/warp <name>");
         } else if (args.length == 1) {
             String Warpname = args[0];
 
-            Location loc = (Location) Main.getPlugin().getConfig().get("Warps." + Warpname);
+            Location loc = (Location) Main.getInstance().getConfig().get("Warps." + Warpname);
 
             p.teleport(loc);
-            p.sendMessage(Manager.PREFIX + "§7Du hast dich zu §e" + Warpname + "§7teleportiert!");
-        } else if (args.length == 1) {
+            p.sendMessage(Manager.PREFIX + "Â§7Du hast dich zu Â§e" + Warpname + "Â§7teleportiert!");
+        } else if (args.length == 2) {
             if (args[0].equalsIgnoreCase("set")) {
                 String Warpname = args[1];
                 Location loc = p.getLocation();
 
-                Main.getPlugin().getConfig().set("Warps." + Warpname, loc);
-                Main.getPlugin().saveConfig();
+                Main.getInstance().getConfig().set("Warps." + Warpname, loc);
+                Main.getInstance().saveConfig();
 
-                p.sendMessage(Manager.PREFIX + "§7Du hast den WarpPunkt §e" + Warpname + "§7erstellt");
+                p.sendMessage(Manager.PREFIX + "Â§7Du hast den WarpPunkt Â§e" + Warpname + "Â§7erstellt");
                 p.teleport(loc);
                 p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 3, 3);
 
-            }
+            } else {
+	    	p.sendMessage(Manager.PREFIX + "Â§cVerwende /warp set <Name>");
+                return true;
+	    }
         }
         return true;
     }
