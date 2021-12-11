@@ -30,11 +30,15 @@ public class Kopf_CMD implements CommandExecutor{
 
                     p.getInventory().addItem(head);
 
-                }else
-                    p.sendMessage(Manager.PREFIX + "�cBenutze: /kopf <Name>");
-            }else
+                } else {
+                    p.sendMessage(Manager.PREFIX + "§cBenutze: /kopf <Name>");
+	    	}
+            } else {
                 p.sendMessage(Manager.NO_PERMS);
-        }
+	    }
+        } else {
+            p.sendMessage(Manager.PREFIX + "§cDu kannst das nicht in der Konsole!");
+	}
         return false;
     }
 

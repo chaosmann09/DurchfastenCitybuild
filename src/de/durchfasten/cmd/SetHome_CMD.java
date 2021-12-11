@@ -16,8 +16,8 @@ public class SetHome_CMD implements CommandExecutor {
 
         Player p = (Player)sender;
 
-        if(args.length == 0) {
-            p.sendMessage(Manager.PREFIX + "§c/sethome <name>");
+        if(args.length < 1 || args.length > 1) {
+            p.sendMessage(Manager.PREFIX + "Â§c/sethome <name>");
             return true;
         }
         if(args.length == 1) {
@@ -25,7 +25,7 @@ public class SetHome_CMD implements CommandExecutor {
 
             manager.addHome(p.getLocation(), args[0]);
 
-            p.sendMessage(Manager.PREFIX + "§7Du hast dein Home §e" + args[0] + " §aerfolgreich §7gesetzt!");
+            p.sendMessage(Manager.PREFIX + "Â§7Du hast dein Home Â§e" + args[0] + " Â§aerfolgreich Â§7gesetzt!");
             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP,3,3);
             return true;
         }

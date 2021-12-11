@@ -15,7 +15,7 @@ public class Warp_CMD implements CommandExecutor{
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         Player p = (Player) sender;
 
-        if (args.length == 0) {
+        if (args.length < 1 || args.length > 2) {
             p.sendMessage(Manager.PREFIX + "§c/warp <name>");
         } else if (args.length == 1) {
             String Warpname = args[0];
@@ -24,7 +24,7 @@ public class Warp_CMD implements CommandExecutor{
 
             p.teleport(loc);
             p.sendMessage(Manager.PREFIX + "§7Du hast dich zu §e" + Warpname + "§7teleportiert!");
-        } else if (args.length == 1) {
+        } else if (args.length == 2) {
             if (args[0].equalsIgnoreCase("set")) {
                 String Warpname = args[1];
                 Location loc = p.getLocation();
@@ -36,7 +36,10 @@ public class Warp_CMD implements CommandExecutor{
                 p.teleport(loc);
                 p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 3, 3);
 
-            }
+            } else {
+	    	p.sendMessage(Manager.PREFIX + "§cVerwende /warp set <Name>");
+                return true;
+	    }
         }
         return true;
     }

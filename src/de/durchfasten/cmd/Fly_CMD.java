@@ -18,15 +18,17 @@ public class Fly_CMD implements CommandExecutor{
                 if (p.getAllowFlight()) {
                     p.setAllowFlight(false);
                     p.setFlying(false);
-                    p.spigot().sendMessage(ChatMessageType.ACTION_BAR, new ComponentBuilder("§7Flugmodus §8» §cDeaktiviert").create());
+                    p.spigot().sendMessage(ChatMessageType.ACTION_BAR, new ComponentBuilder("Â§7Flugmodus Â§8Â» Â§cDeaktiviert").create());
 
                 } else {
                     p.setAllowFlight(true);
                     p.setFlying(true);
-                    p.spigot().sendMessage(ChatMessageType.ACTION_BAR, new ComponentBuilder("§7Flugmodus §8» §aAktiviert").create());
+                    p.spigot().sendMessage(ChatMessageType.ACTION_BAR, new ComponentBuilder("Â§7Flugmodus Â§8Â» Â§aAktiviert").create());
                 }
 
-            }
+            } else {
+	         p.sendMessage(Manager.NO_PERMS);
+	    }
 
         }
         return false;
