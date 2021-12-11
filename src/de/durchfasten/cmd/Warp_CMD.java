@@ -16,23 +16,23 @@ public class Warp_CMD implements CommandExecutor{
         Player p = (Player) sender;
 
         if (args.length == 0) {
-            p.sendMessage(Manager.PREFIX + "งc/warp <name>");
+            p.sendMessage(Manager.PREFIX + "ยงc/warp <name>");
         } else if (args.length == 1) {
             String Warpname = args[0];
 
-            Location loc = (Location) Main.getPlugin().getConfig().get("Warps." + Warpname);
+            Location loc = (Location) Main.getInstance().getConfig().get("Warps." + Warpname);
 
             p.teleport(loc);
-            p.sendMessage(Manager.PREFIX + "ง7Du hast dich zu งe" + Warpname + "ง7teleportiert!");
+            p.sendMessage(Manager.PREFIX + "ยง7Du hast dich zu ยงe" + Warpname + "ยง7teleportiert!");
         } else if (args.length == 1) {
             if (args[0].equalsIgnoreCase("set")) {
                 String Warpname = args[1];
                 Location loc = p.getLocation();
 
-                Main.getPlugin().getConfig().set("Warps." + Warpname, loc);
-                Main.getPlugin().saveConfig();
+                Main.getInstance().getConfig().set("Warps." + Warpname, loc);
+                Main.getInstance().saveConfig();
 
-                p.sendMessage(Manager.PREFIX + "ง7Du hast den WarpPunkt งe" + Warpname + "ง7erstellt");
+                p.sendMessage(Manager.PREFIX + "ยง7Du hast den WarpPunkt ยงe" + Warpname + "ยง7erstellt");
                 p.teleport(loc);
                 p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 3, 3);
 
