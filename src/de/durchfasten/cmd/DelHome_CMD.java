@@ -18,18 +18,18 @@ public class DelHome_CMD implements CommandExecutor {
 
         HomeManager manager = new HomeManager(p.getUniqueId());
 
-        if(args.length == 0) {
-            p.sendMessage(Manager.PREFIX + "§c/delhome <Name>");
+        if(args.length < 1 || args.length > 1) {
+            p.sendMessage(Manager.PREFIX + "Â§c/delhome <Name>");
             return true;
         }
         if(args.length == 1) {
             if(!manager.exist(args[0])){
-                p.sendMessage(Manager.PREFIX + "§cDieses Home existiert nicht!");
+                p.sendMessage(Manager.PREFIX + "Â§cDieses Home existiert nicht!");
                 return true;
             }
             manager.delHome(args[0]);
 
-            p.sendMessage(Manager.PREFIX + "Das Home §e" + args[0] + " §7wurde §aerfolgreich §7gelöscht!");
+            p.sendMessage(Manager.PREFIX + "Das Home Â§e" + args[0] + " Â§7wurde Â§aerfolgreich Â§7gelÃ¶scht!");
             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP,3,3);
             return true;
         }
