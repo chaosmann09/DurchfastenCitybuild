@@ -18,13 +18,7 @@ import de.durchfasten.utils.Manager;
 
 public class Main extends JavaPlugin {
 
-    private static Main plugin;
-
     private static Main instance;
-
-    public static Main getPlugin() {
-        return plugin;
-    }
 
     public static Main getInstance() {
         return instance;
@@ -33,7 +27,7 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
-        Bukkit.getConsoleSender().sendMessage(Manager.PREFIX + "ง7Citybuild wurde geladen");
+        Bukkit.getConsoleSender().sendMessage(Manager.PREFIX + "ยง7Citybuild wurde geladen");
         register();
         loadlistener(Bukkit.getPluginManager());
     }
