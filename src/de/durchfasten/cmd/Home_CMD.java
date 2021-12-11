@@ -19,26 +19,26 @@ public class Home_CMD implements CommandExecutor {
 
         if(args.length == 0) {
             if(manager.getHome() == null) {
-                p.sendMessage(Manager.PREFIX + "§cDu hast keine Homes!");
+                p.sendMessage(Manager.PREFIX + "Â§cDu hast keine Homes!");
                 return true;
             }
             String out = "";
             for(String s: manager.getHome()) {
-                out = out + "§7 §e" + s;
+                out += "Â§7, Â§e" + s;
             }
 
             out = out.trim();
 
-            p.sendMessage(Manager.PREFIX + "§7Deine Homes §8:" + out);
+            p.sendMessage(Manager.PREFIX + "Â§7Deine Homes Â§8:" + out);
         }
         if(args.length == 1) {
             if(!manager.exist(args[0])){
-                p.sendMessage(Manager.PREFIX + "§cDieses Home exetiert nicht!");
+                p.sendMessage(Manager.PREFIX + "Â§cDieses Home exetiert nicht!");
                 return true;
             }
             p.teleport(manager.getLocation(args[0]));
 
-            p.sendMessage(Manager.PREFIX + "Du wurdest zu deinem Home §e" + args[0] + " §7teleportiert!");
+            p.sendMessage(Manager.PREFIX + "Du wurdest zu deinem Home Â§e" + args[0] + " Â§7teleportiert!");
 
             return true;
         }
