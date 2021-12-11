@@ -6,8 +6,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import com.earth2me.essentials.api.UserDoesNotExistException;
-
 import de.durchfasten.utils.Manager;
 
 public class JoinListener implements Listener{
