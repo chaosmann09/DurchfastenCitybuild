@@ -13,7 +13,7 @@ import de.durchfasten.utils.Manager;
 public class JoinListener implements Listener{
 	
 	@EventHandler
-    public void onjoin(PlayerJoinEvent event) throws IllegalStateException, IllegalArgumentException, UserDoesNotExistException {
+    public void onjoin(PlayerJoinEvent event) {
         event.setJoinMessage(null);
         
         for (Player all : Bukkit.getOnlinePlayers()) {
